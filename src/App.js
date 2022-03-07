@@ -1,11 +1,14 @@
 import "./App.css";
-import NavBar from "./Anaiak/components/NavBar";
+import Header from "./Components/Header/Header";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
     return (
-        <div className="App">
-            <NavBar />
-        </div>
+        <Router>
+            <div className="container">
+                <Header />
+            </div>
+        </Router>
     );
 }
 
