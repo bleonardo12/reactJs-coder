@@ -1,17 +1,20 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar";
 import ItemListContainer from "./Container/ItemListContainer";
 import "./Components/NavBar/NavBar.css";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
     return (
-        <div className="div-header">
-            <NavBar />
-            <ItemListContainer />
-            <button className="btn btn-primary">Cargar página</button>
-        </div>
+        <BrowserRouter>
+            <div className="App">
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<ItemListContainer />}></Route>
+                </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 

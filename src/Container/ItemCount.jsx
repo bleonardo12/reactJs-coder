@@ -23,7 +23,7 @@ function ItemCount({ stock, initial, onAdd }) {
             <div className="row">
                 <div className="col-1">
                     <div className="row">
-                        <div className="d-flex justify-content-around col-1">
+                        <div className="d-flex  col-1">
                             <button
                                 className="btn-sm btn-success"
                                 onClick={handleDecrease}

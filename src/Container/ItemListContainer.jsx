@@ -21,10 +21,10 @@ function ItemListContainer() {
                 <Loading />
             ) : (
                 <div className="container">
-                    <h1 className="my-5 text-center">Ropa</h1>
+                    <h1 className="my-5 text-center">Indumentaria Deportiva</h1>
                     <div className="row">
                         {productos.map((prod) => (
-                            <div className="col-md-4 mb-5" key={prod.id}>
+                            <div className="col-md-6 mb-4" key={prod.id}>
                                 <Item prod={prod} loading={loading} />
                             </div>
                         ))}
