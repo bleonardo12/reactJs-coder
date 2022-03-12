@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 function ItemListContainer({ greeting }) {
     const [count, setCount] = useState(0);
@@ -15,7 +16,9 @@ function ItemListContainer({ greeting }) {
         <>
             <div>{greeting}</div>
             <label>{count}</label>
-            <button onClick={handleCount}>click</button>
+            <button onClick={handleCount}>
+                <AiOutlinePlus /> <hr /> <AiOutlineMinus />
+            </button>
         </>
     );
 }
