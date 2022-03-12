@@ -1,26 +1,37 @@
 import { useState, useEffect } from "react";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import Loading from "../Components/Loading/Loading";
+import getItems from "../helpers/getItems";
+import Item from "./Item";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function ItemListContainer({ greeting }) {
-    const [count, setCount] = useState(0);
+function ItemListContainer() {
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        console.log("disparo 1");
-    });
+        getItems
+            .then((data) => setProductos(data))
+            .catch((err) => console.error(`error:${err}`))
+            .finally(() => setLoading(false));
+    }, []);
 
-    const handleCount = () => {
-        setCount(count + 1);
-        console.log(count);
-    };
     return (
-        <>
-            <div>{greeting}</div>
-            <label>{count}</label>
-            <button onClick={handleCount}>
-                <AiOutlinePlus /> <hr /> <AiOutlineMinus />
-            </button>
-        </>
+        <div className="container">
+            {loading ? (
+                <Loading />
+            ) : (
+                <div className="container">
+                    <h1 className="my-5 text-center">Ropa</h1>
+                    <div className="row">
+                        {productos.map((prod) => (
+                            <div className="col-md-4 mb-5" key={prod.id}>
+                                <Item prod={prod} loading={loading} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
     );
 }
-
 export default ItemListContainer;
