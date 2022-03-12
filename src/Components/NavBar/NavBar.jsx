@@ -5,32 +5,38 @@ import CartWidget from "../Widget/CartWidget";
 const NavBar = () => {
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container>
+            <Navbar
+                className="navBar"
+                collapseOnSelect
+                expand="lg"
+                bg="dark"
+                variant="dark"
+            >
+                <Container className="container">
                     <Navbar.Brand href="#home">
                         Anaiak indumentaria deportiva
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                            <Nav.Link href="#features">Femenino</Nav.Link>
+                            <Nav.Link href="#pricing">Masculino</Nav.Link>
                             <NavDropdown
-                                title="Dropdown"
+                                title="Indumentaria general"
                                 id="collasible-nav-dropdown"
                             >
                                 <NavDropdown.Item href="#action/3.1">
-                                    Action
+                                    Camisetas
                                 </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
-                                    Another action
+                                    Buzos
                                 </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">
-                                    Something
+                                    Calzas
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">
-                                    Separated link
+                                    Sneakers
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
@@ -39,7 +45,7 @@ const NavBar = () => {
                                 <CartWidget />
                             </Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
+                                Follow as
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
