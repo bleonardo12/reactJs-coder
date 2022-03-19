@@ -1,16 +1,7 @@
-import buzo1 from "../assets/img/buzo1.png";
-import top1 from "../assets/img/top1.png";
-import top2 from "../assets/img/top2.png";
-import top3 from "../assets/img/top3.png";
-import conjunto1 from "../assets/img/conjunto1.png";
-import conjunto2 from "../assets/img/conjunto2.png";
-import conjunto3 from "../assets/img/conjunto3.png";
-import conjunto4 from "../assets/img/conjunto4.png";
-
 const itemList = [
     {
         id: "1",
-        title: "Camiseta de Racing Titular",
+        title: "Buzo dama",
         category: "Deportiva",
         price: 16000,
         stock: 5,
@@ -18,7 +9,7 @@ const itemList = [
     },
     {
         id: "2",
-        title: "Camiseta de River Titular",
+        title: "Conjunto Dama",
         category: "Deportiva",
         price: 14000,
         stock: 10,
@@ -26,50 +17,50 @@ const itemList = [
     },
     {
         id: "3",
-        title: "Camiseta de Boca Titular",
+        title: "Conjunto dama 2",
         category: "Deportiva",
         price: 13000,
-        stock: 5,
+        stock: 15,
         img: top2,
     },
     {
         id: "4",
-        title: "Camiseta de Sarmiento Titular",
+        title: "Conjunto dama 3",
         category: "Deportiva",
         price: 10000,
-        stock: 5,
+        stock: 20,
         img: top3,
     },
     {
         id: "5",
-        title: "Camiseta de Central Titular",
+        title: "Calza dama",
         category: "Deportiva",
         price: 12000,
-        stock: 5,
+        stock: 25,
         img: conjunto1,
     },
     {
         id: "6",
-        title: "Camiseta de Argentina Titular",
+        title: "Top",
         category: "Deportiva",
         price: 18000,
-        stock: 5,
+        stock: 30,
         img: conjunto2,
     },
     {
         id: "7",
-        title: "Camiseta de Holanda Titular",
+        title: "Conjunto deportivo",
         category: "Deportiva",
         price: 13000,
-        stock: 20,
+        stock: 35,
         img: conjunto3,
     },
     {
         id: "8",
-        title: "Camiseta de Bélgica Titular",
+        title: "Calza promoción",
         category: "Deportiva",
         price: 16000,
-        stock: 15,
+        stock: 40,
         img: conjunto4,
     },
 ];

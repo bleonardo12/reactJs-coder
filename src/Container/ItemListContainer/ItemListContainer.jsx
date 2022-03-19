@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import Loading from "../Components/Loading/Loading";
-import getItems from "../helpers/getItems";
-import Item from "./Item";
+import Loading from "../../Components/Loading/Loading";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Item from "../../Components/Item/Item";
+import { getFetch } from "../../helpers/gFetch";
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getItems
+        getFetch
             .then((data) => setProductos(data))
             .catch((err) => console.error(`error:${err}`))
             .finally(() => setLoading(false));
@@ -34,4 +34,5 @@ function ItemListContainer() {
         </div>
     );
 }
+
 export default ItemListContainer;

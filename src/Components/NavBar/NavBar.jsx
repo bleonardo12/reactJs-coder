@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import CartWidget from "../Widget/CartWidget";
+import logo1 from "../../assets/img/logo1.png";
 
 const NavBar = () => {
     return (
@@ -14,6 +15,7 @@ const NavBar = () => {
             >
                 <Container className="container">
                     <Navbar.Brand href="#home">
+                        <img className="logo1" src={logo1} alt="logo" />
                         Anaiak indumentaria deportiva
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
