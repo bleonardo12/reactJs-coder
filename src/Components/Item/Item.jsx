@@ -6,40 +6,37 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 function Item({ prod, loading }) {
-    console.log({ prod });
-    const { category, title, price, stock, id } = prod;
+    const { stock, id } = prod;
     const [buttonClicked, setButtonClicked] = useState(false);
 
     const handleButtonClick = () => {
         setButtonClicked(true);
     };
     return (
-        <Link to={`detalle/${prod.id}`}>
-            <div>
-                {loading ? (
-                    <loading />
-                ) : (
-                    <div className="card" style={{ width: "18rem" }}>
-                        <div className="card-body">
-                            <p className="card-text">{category}</p>
-                            <p className="card-text">{price}</p>
-                            <p className="card-text">{title}</p>
+        <div>
+            {loading ? (
+                <loading />
+            ) : (
+                <div className="card" style={{ width: "18rem" }}>
+                    <div className="card-header">{`${prod.title} - ${prod.category}`}</div>
+                    <div className="card-body">
+                        <Link to={`detalle/${prod.id}`}>
                             <img src={imagenes[0]} />
-                            <ItemCount stock={stock} initial={1} />
                             <Button onClick={handleButtonClick}>
-                                {" "}
-                                Detalles
+                                Detalles del producto
                             </Button>
                             {buttonClicked ? (
                                 <ItemDetailContainer
-                                    id={id}
+                                    id={prod.id}
                                 ></ItemDetailContainer>
                             ) : null}
-                        </div>
+                        </Link>
+                        <hr></hr>
+                        <ItemCount stock={stock} initial={1} />
                     </div>
-                )}
-            </div>
-        </Link>
+                </div>
+            )}
+        </div>
     );
 }
 

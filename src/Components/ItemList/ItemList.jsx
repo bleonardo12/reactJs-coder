@@ -1,68 +1,15 @@
-const itemList = [
-    {
-        id: "1",
-        title: "Buzo dama",
-        category: "Deportiva",
-        price: 16000,
-        stock: 5,
-        img: buzo1,
-    },
-    {
-        id: "2",
-        title: "Conjunto Dama",
-        category: "Deportiva",
-        price: 14000,
-        stock: 10,
-        img: top1,
-    },
-    {
-        id: "3",
-        title: "Conjunto dama 2",
-        category: "Deportiva",
-        price: 13000,
-        stock: 15,
-        img: top2,
-    },
-    {
-        id: "4",
-        title: "Conjunto dama 3",
-        category: "Deportiva",
-        price: 10000,
-        stock: 20,
-        img: top3,
-    },
-    {
-        id: "5",
-        title: "Calza dama",
-        category: "Deportiva",
-        price: 12000,
-        stock: 25,
-        img: conjunto1,
-    },
-    {
-        id: "6",
-        title: "Top",
-        category: "Deportiva",
-        price: 18000,
-        stock: 30,
-        img: conjunto2,
-    },
-    {
-        id: "7",
-        title: "Conjunto deportivo",
-        category: "Deportiva",
-        price: 13000,
-        stock: 35,
-        img: conjunto3,
-    },
-    {
-        id: "8",
-        title: "Calza promoción",
-        category: "Deportiva",
-        price: 16000,
-        stock: 40,
-        img: conjunto4,
-    },
-];
+import Item from "../Item/Item";
+
+function itemList(prods) {
+    return (
+        <div>
+            <>
+                {prods.map((prod) => (
+                    <Item key={prod.id} prod={prod} />
+                ))}
+            </>
+        </div>
+    );
+}
 
 export default itemList;

@@ -1,4 +1,4 @@
-import React from "react";
+import { NavLink, Link } from "react-router-dom";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import CartWidget from "../Widget/CartWidget";
 import logo1 from "../../assets/img/logo1.png";
@@ -14,15 +14,17 @@ const NavBar = () => {
                 variant="dark"
             >
                 <Container className="container">
-                    <Navbar.Brand href="#home">
+                    <NavLink to="/">
                         <img className="logo1" src={logo1} alt="logo" />
                         Anaiak indumentaria deportiva
-                    </Navbar.Brand>
+                    </NavLink>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Femenino</Nav.Link>
-                            <Nav.Link href="#pricing">Masculino</Nav.Link>
+                            <NavLink to="categoria/femenino">Femenino</NavLink>
+                            <NavLink to="categoria/masculino">
+                                Masculino
+                            </NavLink>
                             <NavDropdown
                                 title="Indumentaria general"
                                 id="collasible-nav-dropdown"
@@ -43,9 +45,9 @@ const NavBar = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">
+                            <NavLink to="cart">
                                 <CartWidget />
-                            </Nav.Link>
+                            </NavLink>
                             <Nav.Link eventKey={2} href="#memes">
                                 Follow as
                             </Nav.Link>

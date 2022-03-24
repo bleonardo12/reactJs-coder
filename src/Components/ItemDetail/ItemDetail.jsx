@@ -1,9 +1,12 @@
 function ItemDetail({ producto }) {
     return (
         <div>
-            <p>{producto.title}</p>
-            <p>{producto.category}</p>
-            <p>{producto.categoria}</p>
+            <center>
+                <p>{producto.title}</p>
+                <p>{producto.category}</p>
+                <p>{producto.talle}</p>
+                <p>{producto.price}</p>
+            </center>
         </div>
     );
 }

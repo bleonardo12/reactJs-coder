@@ -10,18 +10,13 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         getFetch
-            .then((prod) => prod.find((item) => item.id === detalleId))
+            .then(prod => prod.find(item => item.id === detalleId))
             .then((prod) => setProducto(prod))
             .catch((err) => console.log(err))
             .finally(() => setProducto(false));
     }, []);
 
-    return (
-        <div>
-            <p>Detalle del producto</p>
-            <ItemDetail producto={producto} />
-        </div>
-    );
+    return <div>{<ItemDetail producto={producto} />}</div>;
 }
 
 export default ItemDetailContainer;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ItemCount({ stock, initial, onAdd }) {
     const [count, setCount] = useState(initial);
@@ -15,7 +16,7 @@ function ItemCount({ stock, initial, onAdd }) {
     }
 
     const add = () => {
-        console.log(count);
+        onAdd(count);
     };
 
     return (
@@ -39,12 +40,14 @@ function ItemCount({ stock, initial, onAdd }) {
                             </button>
                         </div>
                         <div className="mt-5 col-1">
-                            <button
-                                className="btn btn-outline-success"
-                                onClick={add}
-                            >
-                                Agregar al carrito
-                            </button>
+                            <Link to="cart">
+                                <button
+                                    className="btn btn-outline-success"
+                                    onClick={add}
+                                >
+                                    Agregar al carrito
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
