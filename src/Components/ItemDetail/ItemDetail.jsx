@@ -2,39 +2,53 @@ import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
+import { Card } from "reactstrap"
+import {Container} from "reactstrap"
+import {Row} from "reactstrap"
+import {Col} from "reactstrap"
+import {Button} from "reactstrap"
 
 
 function ItemDetail({producto}) {
-    const [isCant, setIsCant] = useState(false)
+    const [onButton, setOnButton] = useState("button")
     const {addToCart} = useCartContext()
     
     const onAdd= (cant) => {
+        console.log(cant)
         addToCart( { ...producto, cantidad: cant } )
-        setIsCant(true)
+        setOnButton("true")
+        
     }
+    const GoToCart = () => {
 
     return (
-    <div >
-        <center>
+    <Link to="/Cart">
+    <Button variant="danger" onClick={()=> console.log("finalizar. Ir al cart")}>
+         Go to cart
+        </Button>
+    </Link>
+    )
+    }    
+
+    return (
+        <Container>
+        <Row className="justify-content-center">
+        <Col>
+        <Card body border="danger" style={{width:"50rem"}}>
             <img src={producto.img} alt = 'imagen' />
             <p className='alert alert-primary w-25'>{producto.title}</p>
             <p className='alert alert-primary w-25'>{producto.price}</p>
             <p className='alert alert-primary w-25'>{producto.category}</p>
-        </center>
-        {isCant ?
-                <>  
-                    <Link to='/'>
-                        <button className='btn btn-outline-primary'>Seguir comprando</button>
-
-                    </Link>
-                    <Link to='/cart'>
-                        <button className='btn btn-outline-success'>Ir a Cart</button>
-                    </Link>
-                </>
-             :
+        { 
+            onButton === "button" ?
                 <ItemCount initial={1} stock={producto.stock} onAdd={onAdd} />
-            }
-        </div>
+                :
+                <addToCart/>
+        }
+    </Card>
+    </Col>
+    </Row>
+    </Container>
     )
 }
 
