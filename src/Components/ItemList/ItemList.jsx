@@ -1,6 +1,8 @@
 import Item from "../Item/Item";
+import { memo } from "react"
 
-function itemList(prods) {
+const ItemList = memo(
+    ({ prods }) => {
     return (
         <div>
             <>
@@ -9,7 +11,8 @@ function itemList(prods) {
                 ))}
             </>
         </div>
-    );
+    )
 }
+, (anteriorProps, sgteProps)=> anteriorProps.prods.length === sgteProps.prods.length)
 
-export default itemList;
+export default ItemList;

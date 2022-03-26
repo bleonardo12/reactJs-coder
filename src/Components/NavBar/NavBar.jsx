@@ -16,18 +16,18 @@ const NavBar = () => {
                 <Container className="container">
                     <NavLink to="/">
                         <img className="logo1" src={logo1} alt="logo" />
-                        Anaiak indumentaria deportiva
                     </NavLink>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink to="categoria/femenino">Femenino</NavLink>
-                            <NavLink to="categoria/masculino">
+                            <NavLink to="categoria/femenino" className={"nameLink"}>Femenino</NavLink>
+                            <NavLink to="categoria/masculino" className={"nameLink"}>
                                 Masculino
                             </NavLink>
+                            <NavLink to="/">
                             <NavDropdown
                                 title="Indumentaria general"
-                                id="collasible-nav-dropdown"
+                                className={"nameLink"}
                             >
                                 <NavDropdown.Item href="#action/3.1">
                                     Camisetas
@@ -43,14 +43,15 @@ const NavBar = () => {
                                     Sneakers
                                 </NavDropdown.Item>
                             </NavDropdown>
+                            </NavLink>
                         </Nav>
                         <Nav>
-                            <NavLink to="cart">
+                            <NavLink to="cart" className={"nameLink"}>
                                 <CartWidget />
                             </NavLink>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <NavLink to="/" className={"nameLink"}>
                                 Follow as
-                            </Nav.Link>
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

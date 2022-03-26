@@ -2,3 +2,16 @@
     width: 220px;
     height: 220px;
 }
+
+.nameLink {
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: antiquewhite;
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+NavDropdown {
+text-decoration: none;
+}

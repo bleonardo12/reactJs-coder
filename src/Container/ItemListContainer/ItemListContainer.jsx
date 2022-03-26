@@ -11,32 +11,22 @@ function ItemListContainer() {
 
     const { id } = useParams();
 
-    useEffect(() => {
+    useEffect(()=> {
         if (id) {
-            getFetch
-                .then((resp) =>
-                    setProductos(
-                        resp.filter((productos) => productos.category === id)
-                    )
-                )
-                .catch((err) => console.log(err))
-                .finally(() => setLoading(false));
+            getFetch// simulacion a un llamado a una api        
+            .then(resp => setProductos(resp.filter(prod=> prod.categoria === id)))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))           
         } else {
-            getFetch
-                .then((resp) => setProductos(resp))
-                .catch((err) => console.log(err))
-                .finally(() => setLoading(false));
+            getFetch// simulacion a un llamado a una api        
+            .then(resp => setProductos(resp))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))            
         }
-    }, [id]);
-    const onAdd = (cant) => {
-        console.log(cant);
-    };
-
-    console.log(id);
+    }, [id])
 
     return (
         <>
-            <div className="container">
                 {loading ? (
                     <Loading />
                 ) : (
@@ -53,7 +43,6 @@ function ItemListContainer() {
                         </div>
                     </div>
                 )}
-            </div>
         </>
     );
 }
