@@ -24,7 +24,7 @@ function ItemDetail({producto}) {
     return (
     <Link to="/Cart">
     <Button variant="danger" onClick={()=> console.log("finalizar. Ir al cart")}>
-         Go to cart
+         <GoToCart/>
         </Button>
     </Link>
     )

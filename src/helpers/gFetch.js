@@ -29,19 +29,19 @@ const productos = [
     },
     {
         id: "4",
-        title: "slim fit color negra",
+        title: "calza slim fit color negra",
         category: "calzas",
         talle: "m",
-        price: 10000,
+        price: 6000,
         stock: 20,
         img:"https://res.cloudinary.com/leonisa/image/upload/q_auto,f_auto,w_140,dpr_2/assets/1/14/dimlarge/195579_068_1200x1500_1.jpg"
     },
     {
         id: "5",
-        title: "slim fit color azul y blanca ",
+        title: "calza slim fit color azul y blanca ",
         talle: "s",
         category: "calzas",
-        price: 12000,
+        price: 6500,
         stock: 25,
         img:"https://i.pinimg.com/originals/d0/fc/9a/d0fc9aeea25cc6a52b9340a9c09933de.jpg"
     },
@@ -50,7 +50,7 @@ const productos = [
         title: "buzo largo tela antitranspirante color rojo",
         talle: "l",
         category: "buzos",
-        price: 18000,
+        price: 8000,
         stock: 30,
         img:"https://taverniti.vteximg.com.br/arquivos/ids/237895-300-300/04669_679X2.jpg?v=637826055112670000"
     },
@@ -67,7 +67,7 @@ const productos = [
         id: "8",
         title: "buzo largo tela antitranspirante color beige",
         talle: "xxl",
-        category: "tops",
+        category: "buzos",
         price: 16000,
         stock: 40,
         img:"https://taverniti.vteximg.com.br/arquivos/ids/237895-300-300/04669_679X2.jpg?v=637826055112670000"
